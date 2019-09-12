@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - SmartBlogger</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,13 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Blob", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("SmartBlogger", "Index", "Blog", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Blob")</li>
-                    <li>@Html.ActionLink("About", "About", "Blob")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Blob")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Blog")</li>
+                    <li>@Html.ActionLink("About", "About", "Blog")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Blog")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -33,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p align="center">&copy; @DateTime.Now.Year - <i>SmartBlogger</i></p>
         </footer>
     </div>
 
