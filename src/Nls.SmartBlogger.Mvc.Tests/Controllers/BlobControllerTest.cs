@@ -10,13 +10,13 @@ using Nls.SmartBlogger.Mvc.Controllers;
 namespace Nls.SmartBlogger.Mvc.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerTest
+    public class BlobControllerTest
     {
         [TestMethod]
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            BlobController controller = new BlobController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -29,7 +29,7 @@ namespace Nls.SmartBlogger.Mvc.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            BlobController controller = new BlobController();
 
             // Act
             ViewResult result = controller.About() as ViewResult;
@@ -42,7 +42,7 @@ namespace Nls.SmartBlogger.Mvc.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            BlobController controller = new BlobController();
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;

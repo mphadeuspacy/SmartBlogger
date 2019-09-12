@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Nls.SmartBlogger.Mvc.Controllers
 {
-    public class HomeController : Controller
+    public class BlobController : Controller
     {
         public ActionResult Index()
         {
