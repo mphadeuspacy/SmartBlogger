@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nls.SmartBlogger.Core", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nls.SmartBlogger.Mvc", "src\Nls.SmartBlogger.Mvc\Nls.SmartBlogger.Mvc.csproj", "{DFBA0E32-4BBB-4F48-A12E-BE41B8BE28A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nls.SmartBlogger.Common", "src\Nls.SmartBlogger.Common\Nls.SmartBlogger.Common.csproj", "{0DD58531-358C-4465-ABAE-5C090B4BEE70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{DFBA0E32-4BBB-4F48-A12E-BE41B8BE28A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFBA0E32-4BBB-4F48-A12E-BE41B8BE28A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFBA0E32-4BBB-4F48-A12E-BE41B8BE28A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD58531-358C-4465-ABAE-5C090B4BEE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD58531-358C-4465-ABAE-5C090B4BEE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD58531-358C-4465-ABAE-5C090B4BEE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD58531-358C-4465-ABAE-5C090B4BEE70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{D160E929-3756-4AC0-9EA7-9538859E1A33} = {A061E38A-9C27-47BB-B62A-72E013023471}
 		{937F3591-5DFC-4293-81F9-F4BCE16473C0} = {A061E38A-9C27-47BB-B62A-72E013023471}
 		{DFBA0E32-4BBB-4F48-A12E-BE41B8BE28A9} = {A061E38A-9C27-47BB-B62A-72E013023471}
+		{0DD58531-358C-4465-ABAE-5C090B4BEE70} = {A061E38A-9C27-47BB-B62A-72E013023471}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C95E24B6-0640-4C25-AE37-C24C90C96763}

@@ -1,0 +1,6 @@
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Common\bin\Debug\Nls.SmartBlogger.Common.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Common\bin\Debug\Nls.SmartBlogger.Common.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Common\obj\Debug\Nls.SmartBlogger.Common.csprojAssemblyReference.cache
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Common\obj\Debug\Nls.SmartBlogger.Common.csproj.CoreCompileInputs.cache
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Common\obj\Debug\Nls.SmartBlogger.Common.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Common\obj\Debug\Nls.SmartBlogger.Common.pdb

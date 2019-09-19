@@ -35,6 +35,5 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
         {
             Shutdown();
         }
-
     }
 }
