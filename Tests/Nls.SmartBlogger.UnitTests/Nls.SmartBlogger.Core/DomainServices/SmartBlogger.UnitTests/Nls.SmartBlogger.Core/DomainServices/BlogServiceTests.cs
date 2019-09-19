@@ -30,5 +30,11 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
         }
 
+        [OneTimeTearDown]
+        public void TearDownAfterAllTestRuns()
+        {
+            Shutdown();
+        }
+
     }
 }
