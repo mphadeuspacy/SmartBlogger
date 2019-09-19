@@ -1,0 +1,16 @@
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\SmartBlogger.UnitTests.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\SmartBlogger.UnitTests.pdb
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Autofac.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\nunit.framework.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\SmartBlogger.Tests.Common.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\SmartBlogger.Tests.Common.pdb
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Autofac.xml
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\nunit.framework.xml
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\obj\Debug\SmartBlogger.UnitTests.csprojAssemblyReference.cache
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\obj\Debug\SmartBlogger.UnitTests.csproj.CoreCompileInputs.cache
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\obj\Debug\SmartBlogger.UnitTests.csproj.CopyComplete
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\obj\Debug\SmartBlogger.UnitTests.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\obj\Debug\SmartBlogger.UnitTests.pdb
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.Core.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Shouldly.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.Core.pdb
