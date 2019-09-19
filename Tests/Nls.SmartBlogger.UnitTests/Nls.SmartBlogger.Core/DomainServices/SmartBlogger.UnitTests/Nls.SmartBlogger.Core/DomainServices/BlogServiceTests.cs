@@ -1,4 +1,5 @@
-﻿using Nls.SmartBlogger.Core.DomainServices;
+﻿using System.Threading.Tasks;
+using Nls.SmartBlogger.Core.DomainServices;
 using SmartBlogger.Tests.Common;
 using SmartBlogger.UnitTests.Modules;
 using NUnit.Framework;
@@ -22,6 +23,11 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
         {
             // Assert 
             _blogService.ShouldNotBeNull();
+        }
+
+        public async Task GetAll_OnSuccess_ThenReturnAllBlogs()
+        {
+
         }
 
     }

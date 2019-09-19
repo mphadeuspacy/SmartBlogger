@@ -1,0 +1,6 @@
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\bin\Debug\Nls.SmartBlogger.EfPersister.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\bin\Debug\Nls.SmartBlogger.EfPersister.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\obj\Debug\Nls.SmartBlogger.EfPersister.csprojAssemblyReference.cache
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\obj\Debug\Nls.SmartBlogger.EfPersister.csproj.CoreCompileInputs.cache
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\obj\Debug\Nls.SmartBlogger.EfPersister.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\obj\Debug\Nls.SmartBlogger.EfPersister.pdb

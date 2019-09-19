@@ -58,7 +58,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Nls.SmartBlogger.Core\Nls.SmartBlogger.Core.csproj">
+    <ProjectReference Include="..\..\..\..\..\src\Nls.SmartBlogger.Core\Nls.SmartBlogger.Core.csproj">
       <Project>{937F3591-5DFC-4293-81F9-F4BCE16473C0}</Project>
       <Name>Nls.SmartBlogger.Core</Name>
     </ProjectReference>
