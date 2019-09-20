@@ -28,7 +28,6 @@ namespace Nls.SmartBlogger.EfPersister.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TagKey { get; set; }
         public string TagName { get; set; }
-        [ForeignKey("Blog")]
         public int BlogId { get; set; }
         #endregion
 
