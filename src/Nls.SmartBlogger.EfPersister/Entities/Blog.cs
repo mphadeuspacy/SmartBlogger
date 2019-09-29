@@ -19,12 +19,13 @@ namespace Nls.SmartBlogger.EfPersister.Entities
         public string ImageUrl { get; set; }
         [Required]
         public string Blurb { get; set; }
+        public int? TagId { get; set; }
 
         public DateTime? CreationTime { get; set; }
         public int? CreatorUserId { get; set; }
         public DateTime? LastModificationTime { get; set; }
         public int? LastModifierUserId { get; set; }
 
-        public virtual ICollection<Tag> Tags { get; set; }
+        public virtual Tag Tag { get; set; }
     }
 }

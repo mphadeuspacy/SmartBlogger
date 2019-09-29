@@ -14,3 +14,4 @@ C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\bin\Debug\Nls.SmartBlogger.
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\bin\Debug\Nls.SmartBlogger.Common.pdb
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\obj\Debug\Nls.SmartBlogger.EfPersister.Migrations.Initial.resources
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\obj\Debug\Nls.SmartBlogger.EfPersister.csproj.GenerateResource.cache
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.EfPersister\obj\Debug\Nls.SmartBlogger.EfPersister.Migrations.Updated_Seeded_Tags.resources

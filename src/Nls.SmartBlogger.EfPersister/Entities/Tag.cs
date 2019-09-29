@@ -28,10 +28,9 @@ namespace Nls.SmartBlogger.EfPersister.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TagKey { get; set; }
         public string TagName { get; set; }
-        public int BlogId { get; set; }
         #endregion
 
-        public virtual Blog Blog { get; set; }
+        public virtual ICollection<Blog> Blogs { get; set; }
 
         public Tag() { }
 
@@ -45,27 +44,27 @@ namespace Nls.SmartBlogger.EfPersister.Entities
 
         public static Tag FromName(string name)
         {
-            var registrationStatus = ListOfAllPredefinedTags
+            var tag = ListOfAllPredefinedTags
                 .SingleOrDefault(s => String.Equals(s.Name, name, StringComparison.CurrentCultureIgnoreCase));
 
-            if (registrationStatus == null)
+            if (tag == null)
             {
                 throw new BusinessException($"Possible values for Tag: {string.Join(",", ListOfAllPredefinedTags.Select(s => s.Name))}");
             }
 
-            return registrationStatus;
+            return tag;
         }
 
         public static Tag FromKey(int value)
         {
-            var registrationStatus = ListOfAllPredefinedTags.SingleOrDefault(s => s.Value == value);
+            var tag = ListOfAllPredefinedTags.SingleOrDefault(s => s.Value == value);
 
-            if (registrationStatus == null)
+            if (tag == null)
             {
                 throw new BusinessException($"Possible values for Tag: {string.Join(",", ListOfAllPredefinedTags.Select(s => s.Name))}");
             }
 
-            return registrationStatus;
+            return tag;
         }
     }
 }
