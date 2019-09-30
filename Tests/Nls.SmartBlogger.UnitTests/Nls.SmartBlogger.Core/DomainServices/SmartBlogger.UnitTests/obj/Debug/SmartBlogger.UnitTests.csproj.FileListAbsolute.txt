@@ -24,3 +24,7 @@ C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\Domai
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\SmartBlogger.UnitTests.dll.config
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\EntityFramework.SqlServer.dll
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Castle.Core.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Moq.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Castle.Core.xml
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Moq.xml

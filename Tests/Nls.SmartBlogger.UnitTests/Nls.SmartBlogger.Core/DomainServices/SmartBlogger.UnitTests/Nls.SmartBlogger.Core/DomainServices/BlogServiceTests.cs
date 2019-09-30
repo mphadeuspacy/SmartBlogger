@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Moq;
 using Nls.SmartBlogger.Common.Exceptions;
 using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.Core.Filters;
+using Nls.SmartBlogger.EfPersister.Abstracts;
 using Nls.SmartBlogger.EfPersister.Entities;
 using SmartBlogger.Tests.Common;
 using SmartBlogger.UnitTests.Modules;
@@ -31,6 +34,13 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
         }
 
         #region OnFailure
+        [Test]
+        public void CreateBlogService_WhenBlogRepositoryIsNull_ThrowArgumentNullException()
+        {
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => new BlogService(null));
+        }
+
         [Test]
         public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterIsNull_ThenThrowBusinessException()
         {
