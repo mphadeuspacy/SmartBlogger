@@ -27,9 +27,10 @@ namespace SmartBlogger.UnitTests.Modules
             //    .As<DbContext>()
             //    .SingleInstance();
 
-            //builder.RegisterType<BlogRepository>()
-            //    .As<IBlogRepository>()
-            //    .SingleInstance();
+            builder.RegisterType<BlogRepository>()
+                .As<IBlogRepository>()
+                .WithParameter("context", smartDbContext)
+                .SingleInstance();
 
             builder.RegisterType<BlogService>()
                 .As<IBlogService>()
