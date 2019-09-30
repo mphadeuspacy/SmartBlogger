@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Data.Entity;
+using Autofac;
 using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.EfPersister;
 using Nls.SmartBlogger.EfPersister.Abstracts;
@@ -10,18 +11,23 @@ namespace SmartBlogger.UnitTests.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
+
+            //builder.RegisterType<DbContext>().AsSelf();
+            //builder.RegisterType<IUnitOfWork>().AsSelf();
+
             //builder.RegisterType<SmartBloggerDbContext>()
             //    .As<IUnitOfWork>()
-            //    .InstancePerLifetimeScope();
+            //    .As<DbContext>()
+            //    .SingleInstance();
 
             //builder.RegisterType<BlogRepository>()
             //    .As<IBlogRepository>()
-            //    .InstancePerLifetimeScope();
+            //    .SingleInstance();
 
             builder.RegisterType<BlogService>()
                 .As<IBlogService>()
-                .InstancePerLifetimeScope();
+                .WithParameter("blogRepository", new BlogRepository(new SmartBloggerDbContext("")))
+                .SingleInstance();
         }
-        
     }
 }

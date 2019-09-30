@@ -21,3 +21,6 @@ C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\Domai
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.EfPersister.dll.config
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\EntityFramework.xml
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.Common.pdb
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\SmartBlogger.UnitTests.dll.config
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\EntityFramework.SqlServer.xml

@@ -50,7 +50,7 @@ namespace Nls.SmartBlogger.EfPersister.Repositories
                 return;
             }
 
-            _context.Entry(entityToDelete).State = EntityState.Deleted;
+            _context.Blogs.Remove(entityToDelete);
         }
     }
 }
