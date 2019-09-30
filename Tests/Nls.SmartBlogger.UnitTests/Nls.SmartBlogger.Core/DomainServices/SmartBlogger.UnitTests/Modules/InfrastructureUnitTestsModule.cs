@@ -10,16 +10,15 @@ namespace SmartBlogger.UnitTests.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<SmartBloggerDbContext>()
-                .As<IUnitOfWork>()
-                .InstancePerLifetimeScope();
+            //builder.RegisterType<SmartBloggerDbContext>()
+            //    .As<IUnitOfWork>()
+            //    .InstancePerLifetimeScope();
 
-            builder.RegisterType<BlogRepository>()
-                .As<IBlogRepository>()
-                .WithParameter(new TypedParameter(typeof(SmartBloggerDbContext), "SmartBloggerDbContext"))
-                .InstancePerLifetimeScope();
+            //builder.RegisterType<BlogRepository>()
+            //    .As<IBlogRepository>()
+            //    .InstancePerLifetimeScope();
 
-            builder.Register(db => new BlogService())
+            builder.RegisterType<BlogService>()
                 .As<IBlogService>()
                 .InstancePerLifetimeScope();
         }

@@ -4,11 +4,11 @@ using Nls.SmartBlogger.EfPersister.Entities;
 
 namespace Nls.SmartBlogger.EfPersister.Abstracts
 {
-    public interface IBlogRepository
+    public interface IBlogRepository : IRepository<Blog>
     {
         Task<Blog> GetByIdAsync(int id);
 
-        IList<Task<Blog>> GetAllAsync();
+        Task<IList<Blog>> GetAllAsync();
 
         Blog Add(Blog blog);
 

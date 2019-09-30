@@ -45,6 +45,11 @@
     <Compile Include="Filters\GetAllAsyncFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Nls.SmartBlogger.EfPersister\Nls.SmartBlogger.EfPersister.csproj">
+      <Project>{D160E929-3756-4AC0-9EA7-9538859E1A33}</Project>
+      <Name>Nls.SmartBlogger.EfPersister</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

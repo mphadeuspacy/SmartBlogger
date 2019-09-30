@@ -10,3 +10,11 @@ C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\obj\Debug\Nls.SmartBlogger.Core.cs
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\obj\Debug\Nls.SmartBlogger.Core.csproj.CoreCompileInputs.cache
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\obj\Debug\Nls.SmartBlogger.Core.dll
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\obj\Debug\Nls.SmartBlogger.Core.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\bin\Debug\Nls.SmartBlogger.EfPersister.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\bin\Debug\EntityFramework.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\bin\Debug\Nls.SmartBlogger.Common.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\bin\Debug\Nls.SmartBlogger.EfPersister.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\bin\Debug\Nls.SmartBlogger.EfPersister.dll.config
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\bin\Debug\EntityFramework.xml
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\bin\Debug\Nls.SmartBlogger.Common.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Core\obj\Debug\Nls.SmartBlogger.Core.csproj.CopyComplete

@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using Nls.SmartBlogger.Common.Extensions;
-using Nls.SmartBlogger.Core.Filters;
 using Nls.SmartBlogger.EfPersister.Abstracts;
 using Nls.SmartBlogger.EfPersister.Entities;
 
 namespace Nls.SmartBlogger.EfPersister.Repositories
 {
-    public class BlogRepository : IRepository<Blog>
+    public class BlogRepository : IBlogRepository
     {
         private readonly SmartBloggerDbContext _context;
 
@@ -43,6 +39,18 @@ namespace Nls.SmartBlogger.EfPersister.Repositories
         public void Update(Blog blog)
         {
             _context.Entry(blog).State = EntityState.Modified;
+        }
+
+        public void Delete(int id)
+        {
+            var entityToDelete =  _context.Blogs.FirstOrDefault(b => b.BlogId == id);
+
+            if (entityToDelete == null)
+            {
+                return;
+            }
+
+            _context.Entry(entityToDelete).State = EntityState.Deleted;
         }
     }
 }
