@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SmartBlogger.Tests.Common
 {
-    public class SmartBloggerTestsConsts
+    public static class SmartBloggerTestsConsts
     {
+        public const string connectionString = "SmartBloggerDbContext";
     }
 }

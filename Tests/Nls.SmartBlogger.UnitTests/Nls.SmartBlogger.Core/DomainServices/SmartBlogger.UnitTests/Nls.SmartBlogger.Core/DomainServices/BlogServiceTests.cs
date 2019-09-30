@@ -1,5 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Nls.SmartBlogger.Common.Exceptions;
 using Nls.SmartBlogger.Core.DomainServices;
+using Nls.SmartBlogger.Core.Filters;
+using Nls.SmartBlogger.EfPersister.Entities;
 using SmartBlogger.Tests.Common;
 using SmartBlogger.UnitTests.Modules;
 using NUnit.Framework;
@@ -25,10 +30,24 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             _blogService.ShouldNotBeNull();
         }
 
-        //public async Task GetAll_OnSuccess_ThenReturnAllBlogs()
-        //public async Task GetAll_OnSuccess_ThenReturnAllBlogs()
+        #region OnFailure
+        [Test]
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterIsNull_ThenThrowBusinessException()
+        {
+            // Arrange
+            GetAllAsyncFilter getAllAsyncFilter = null;
+           
+            // Act & Assert
+            Assert.ThrowsAsync<BusinessException>( () => _blogService.GetAllByFilterAsync(getAllAsyncFilter));
+        } 
+        #endregion
+        //public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs0_ThenReturnAllBlogs()
         //{
+        //    // Arrange
+        //    var getAllAsyncFilter = null
+        //    // Act 
 
+        //    // Assert
         //}
 
         [OneTimeTearDown]

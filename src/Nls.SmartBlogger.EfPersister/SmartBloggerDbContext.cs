@@ -13,11 +13,11 @@ namespace Nls.SmartBlogger.EfPersister
         {
         }
 
-        //This constructor is used in tests
-        public SmartBloggerDbContext(DbConnection connection)
-            : base(connection, true)
-        {
-        }
+        ////This constructor is used in tests
+        //public SmartBloggerDbContext(DbConnection connection)
+        //    : base(connection, true)
+        //{
+        //}
 
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Tag> Tags { get; set; }

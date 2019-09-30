@@ -23,5 +23,11 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.EfPersister.Repositories
             // Assert 
             _blogRepository.ShouldNotBeNull();
         }
+
+        [OneTimeTearDown]
+        public void TearDownAfterAllTestRuns()
+        {
+            Shutdown();
+        }
     }
 }

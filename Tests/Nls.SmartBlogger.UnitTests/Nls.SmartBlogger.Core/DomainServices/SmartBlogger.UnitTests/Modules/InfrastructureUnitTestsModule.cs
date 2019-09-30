@@ -4,6 +4,7 @@ using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.EfPersister;
 using Nls.SmartBlogger.EfPersister.Abstracts;
 using Nls.SmartBlogger.EfPersister.Repositories;
+using SmartBlogger.Tests.Common;
 
 namespace SmartBlogger.UnitTests.Modules
 {
@@ -11,22 +12,10 @@ namespace SmartBlogger.UnitTests.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            const string connectionString = "SmartBloggerDbContext";
-
-            var smartDbContext = new SmartBloggerDbContext(connectionString);
+            var smartDbContext = new SmartBloggerDbContext(SmartBloggerTestsConsts.connectionString);
 
             var blogRepository = new BlogRepository(smartDbContext);
-
-            //var blogService = new BlogService(blogRepository);
-
-            //builder.RegisterType<DbContext>().AsSelf();
-            //builder.RegisterType<IUnitOfWork>().AsSelf();
-
-            //builder.RegisterType<SmartBloggerDbContext>()
-            //    .As<IUnitOfWork>()
-            //    .As<DbContext>()
-            //    .SingleInstance();
-
+            
             builder.RegisterType<BlogRepository>()
                 .As<IBlogRepository>()
                 .WithParameter("context", smartDbContext)

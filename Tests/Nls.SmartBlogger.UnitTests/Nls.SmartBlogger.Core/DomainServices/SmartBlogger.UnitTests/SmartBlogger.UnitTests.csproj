@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\src\Nls.SmartBlogger.Common\Nls.SmartBlogger.Common.csproj">
+      <Project>{0DD58531-358C-4465-ABAE-5C090B4BEE70}</Project>
+      <Name>Nls.SmartBlogger.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\src\Nls.SmartBlogger.Core\Nls.SmartBlogger.Core.csproj">
       <Project>{937F3591-5DFC-4293-81F9-F4BCE16473C0}</Project>
       <Name>Nls.SmartBlogger.Core</Name>
