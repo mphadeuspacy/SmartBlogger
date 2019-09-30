@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\IBlogRepository.cs" />
+    <Compile Include="Abstracts\IUnitOfWork.cs" />
     <Compile Include="Entities\Blog.cs" />
     <Compile Include="Migrations\201909201515266_Initial.cs" />
     <Compile Include="Migrations\201909201515266_Initial.Designer.cs">
@@ -60,6 +62,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Abstracts\IRepository.cs" />
+    <Compile Include="Repositories\BlogRepository.cs" />
     <Compile Include="SmartBloggerDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,10 +75,12 @@
       <Project>{0DD58531-358C-4465-ABAE-5C090B4BEE70}</Project>
       <Name>Nls.SmartBlogger.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nls.SmartBlogger.Core\Nls.SmartBlogger.Core.csproj">
+      <Project>{937F3591-5DFC-4293-81F9-F4BCE16473C0}</Project>
+      <Name>Nls.SmartBlogger.Core</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201909201515266_Initial.resx">
       <DependentUpon>201909201515266_Initial.cs</DependentUpon>

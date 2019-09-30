@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Enums\Enumeration.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

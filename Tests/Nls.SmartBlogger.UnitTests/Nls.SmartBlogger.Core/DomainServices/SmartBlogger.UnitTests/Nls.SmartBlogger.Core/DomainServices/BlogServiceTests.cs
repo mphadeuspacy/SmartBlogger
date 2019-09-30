@@ -25,10 +25,11 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             _blogService.ShouldNotBeNull();
         }
 
-        public async Task GetAll_OnSuccess_ThenReturnAllBlogs()
-        {
+        //public async Task GetAll_OnSuccess_ThenReturnAllBlogs()
+        //public async Task GetAll_OnSuccess_ThenReturnAllBlogs()
+        //{
 
-        }
+        //}
 
         [OneTimeTearDown]
         public void TearDownAfterAllTestRuns()

@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Modules\InfrastructureUnitTestsModule.cs" />
     <Compile Include="Nls.SmartBlogger.Core\DomainServices\BlogServiceTests.cs" />
+    <Compile Include="Nls.SmartBlogger.EfPersister\Repositories\BlogRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,10 +63,15 @@
       <Project>{937F3591-5DFC-4293-81F9-F4BCE16473C0}</Project>
       <Name>Nls.SmartBlogger.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\src\Nls.SmartBlogger.EfPersister\Nls.SmartBlogger.EfPersister.csproj">
+      <Project>{D160E929-3756-4AC0-9EA7-9538859E1A33}</Project>
+      <Name>Nls.SmartBlogger.EfPersister</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\SmartBlogger.Tests.Common\SmartBlogger.Tests.Common.csproj">
       <Project>{3B401528-1E13-4AA7-A899-3C0518C059A7}</Project>
       <Name>SmartBlogger.Tests.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

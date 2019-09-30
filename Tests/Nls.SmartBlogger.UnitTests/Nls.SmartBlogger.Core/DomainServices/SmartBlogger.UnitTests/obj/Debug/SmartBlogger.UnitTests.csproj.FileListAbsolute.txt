@@ -14,3 +14,10 @@ C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\Domai
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.Core.dll
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Shouldly.dll
 C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.Core.pdb
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.EfPersister.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\EntityFramework.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.Common.dll
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.EfPersister.pdb
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.EfPersister.dll.config
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\EntityFramework.xml
+C:\Dev\SmartBlogger\Tests\Nls.SmartBlogger.UnitTests\Nls.SmartBlogger.Core\DomainServices\SmartBlogger.UnitTests\bin\Debug\Nls.SmartBlogger.Common.pdb
