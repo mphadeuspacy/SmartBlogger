@@ -11,6 +11,13 @@ namespace SmartBlogger.UnitTests.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
+            const string connectionString = "SmartBloggerDbContext";
+
+            var smartDbContext = new SmartBloggerDbContext(connectionString);
+
+            var blogRepository = new BlogRepository(smartDbContext);
+
+            //var blogService = new BlogService(blogRepository);
 
             //builder.RegisterType<DbContext>().AsSelf();
             //builder.RegisterType<IUnitOfWork>().AsSelf();
@@ -26,7 +33,7 @@ namespace SmartBlogger.UnitTests.Modules
 
             builder.RegisterType<BlogService>()
                 .As<IBlogService>()
-                .WithParameter("blogRepository", new BlogRepository(new SmartBloggerDbContext("")))
+                .WithParameter("blogRepository", blogRepository)
                 .SingleInstance();
         }
     }
