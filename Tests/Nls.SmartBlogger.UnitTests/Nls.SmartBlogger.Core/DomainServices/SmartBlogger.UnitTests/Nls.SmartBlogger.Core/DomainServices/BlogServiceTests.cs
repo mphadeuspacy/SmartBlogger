@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Moq;
@@ -58,11 +59,9 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
         #region OnSuccess
         [Test]
-        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs0_ThenReturn0Blogs()
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs0AndBlogsExistInTheDataStore_ThenReturn0Blogs()
         {
             // Arrange
-            var mockUnitOfWork = new Mock<IUnitOfWork>();
-
             var mockBlogRepository = new Mock<IBlogRepository>();
 
             IList<Blog> blogList = FakeBlogs();
@@ -76,10 +75,39 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             var getAllAsyncFilter = new GetAllAsyncFilter(0);
 
             // Act 
-            var actualResult = await _blogService.GetAllByFilterAsync(getAllAsyncFilter);
+            var actualResult = await new BlogService(mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
 
             // Assert
             actualResult.Count.ShouldBe(expectedResult);
+        }
+
+        [Test]
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs3AndBlogsExistInTheDataStore_ThenReturnFirst3Blogs()
+        {
+            // Arrange
+            var mockBlogRepository = new Mock<IBlogRepository>();
+
+            IList<Blog> blogList = FakeBlogs();
+
+            mockBlogRepository
+                .Setup(r => r.GetAllAsync())
+                .ReturnsAsync(blogList);
+
+            int expectedResult = 3;
+
+            var getAllAsyncFilter = new GetAllAsyncFilter(3);
+
+            // Act 
+            var actualResult = await new BlogService(mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
+
+            // Assert
+            actualResult.Count.ShouldBe(expectedResult);
+
+            actualResult.Single(first => first.BlogId == 1).ShouldNotBeNull();
+
+            actualResult.Single(second => second.BlogId == 2).ShouldNotBeNull();
+
+            actualResult.Single(third => third.BlogId == 3).ShouldNotBeNull();
         }
 
         private IList<Blog> FakeBlogs()
