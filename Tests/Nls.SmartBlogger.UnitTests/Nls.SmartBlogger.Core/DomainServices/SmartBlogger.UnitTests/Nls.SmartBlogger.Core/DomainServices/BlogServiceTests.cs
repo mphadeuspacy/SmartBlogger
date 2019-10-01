@@ -58,7 +58,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
         #region OnSuccess
         [Test]
-        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs0_ThenReturnAllBlogs()
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs0_ThenReturn0Blogs()
         {
             // Arrange
             var mockUnitOfWork = new Mock<IUnitOfWork>();
@@ -71,7 +71,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
                 .Setup(r => r.GetAllAsync())
                 .ReturnsAsync(blogList);
 
-            int expectedResult = blogList.Count;
+            int expectedResult = 0;
 
             var getAllAsyncFilter = new GetAllAsyncFilter(0);
 
