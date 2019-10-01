@@ -2,10 +2,16 @@
 {
     public class GetAllAsyncFilter
     {
-        public int Take { get; }
+        public ushort Skip { get; }
+        public ushort Take { get; }
 
-        public GetAllAsyncFilter(int take)
+        public GetAllAsyncFilter
+        (
+            ushort skip = 0, 
+            ushort take = 0
+        )
         {
+            Skip = skip;
             Take = take;
         }
     }

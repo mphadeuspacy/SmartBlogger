@@ -23,6 +23,8 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
         private readonly BlogBuilder _blogBuilder = new BlogBuilder();
 
+        private Mock<IBlogRepository> _mockBlogRepository;
+
         [OneTimeSetUp]
         public void InitializePerClassInstance()
         {
@@ -57,46 +59,46 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
         #region OnSuccess
         [Test]
-        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs0AndBlogsExistInTheDataStore_ThenReturn0Blogs()
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterSkipAndTakeValuesAre0AndBlogsExistInTheDataStore_ThenReturn0Blogs()
         {
             // Arrange
-            var mockBlogRepository = new Mock<IBlogRepository>();
-
             IList<Blog> blogList = _blogBuilder.BuildBlogs;
 
-            mockBlogRepository
+            _mockBlogRepository = new Mock<IBlogRepository>();
+
+            _mockBlogRepository
                 .Setup(r => r.GetAllAsync())
                 .ReturnsAsync(blogList);
 
             int expectedResult = 0;
 
-            var getAllAsyncFilter = new GetAllAsyncFilter(0);
+            var getAllAsyncFilter = new GetAllAsyncFilter(skip: 0, take:0);
 
             // Act 
-            var actualResult = await new BlogService(mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
+            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
 
             // Assert
             actualResult.Count.ShouldBe(expectedResult);
         }
 
         [Test]
-        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeValueIs3AndBlogsExistInTheDataStore_ThenReturnFirst3Blogs()
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterSkipIs0AndTakeIs3AndBlogsExistInTheDataStore_ThenReturnFirst3Blogs()
         {
             // Arrange
-            var mockBlogRepository = new Mock<IBlogRepository>();
-
             IList<Blog> blogList = _blogBuilder.BuildBlogs;
 
-            mockBlogRepository
+            _mockBlogRepository = new Mock<IBlogRepository>();
+
+            _mockBlogRepository
                 .Setup(r => r.GetAllAsync())
                 .ReturnsAsync(blogList);
 
             int expectedResult = 3;
 
-            var getAllAsyncFilter = new GetAllAsyncFilter(3);
+            var getAllAsyncFilter = new GetAllAsyncFilter(skip: 0, take: 3);
 
             // Act 
-            var actualResult = await new BlogService(mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
+            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
 
             // Assert
             actualResult.Count.ShouldBe(expectedResult);
@@ -108,21 +110,30 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             actualResult.Single(third => third.BlogId == 3).ShouldNotBeNull();
         }
 
-        private IList<Blog> FakeBlogs()
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeAndSkipAre3AndBlogsExistInTheDataStore_ThenReturnNext4To6Blogs()
         {
-            return new List<Blog>
-            {
-                new Blog { BlogId = 1 },
-                new Blog { BlogId = 2 },
-                new Blog { BlogId = 3 },
-                new Blog { BlogId = 4 },
-                new Blog { BlogId = 5 },
-                new Blog { BlogId = 6 },
-                new Blog { BlogId = 7 },
-                new Blog { BlogId = 8 },
-                new Blog { BlogId = 9 },
-                new Blog { BlogId = 10 }
-            };
+            // Arrange
+            IList<Blog> blogList = _blogBuilder.BuildBlogs;
+
+            _mockBlogRepository
+                .Setup(r => r.GetAllAsync())
+                .ReturnsAsync(blogList);
+
+            int expectedResult = 3;
+
+            var getAllAsyncFilter = new GetAllAsyncFilter(skip: 3, take: 3);
+
+            // Act 
+            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
+
+            // Assert
+            actualResult.Count.ShouldBe(expectedResult);
+
+            actualResult.Single(four => four.BlogId == 4).ShouldNotBeNull();
+
+            actualResult.Single(five => five.BlogId == 5).ShouldNotBeNull();
+
+            actualResult.Single(six => six.BlogId == 6).ShouldNotBeNull();
         }
 
         #endregion
