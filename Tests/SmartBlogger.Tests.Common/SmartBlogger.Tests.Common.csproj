@@ -44,12 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\Builders.cs" />
     <Compile Include="SmartBloggerTestsConsts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Nls.SmartBlogger.EfPersister\Nls.SmartBlogger.EfPersister.csproj">
+      <Project>{D160E929-3756-4AC0-9EA7-9538859E1A33}</Project>
+      <Name>Nls.SmartBlogger.EfPersister</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

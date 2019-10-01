@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Moq;
 using Nls.SmartBlogger.Common.Exceptions;
 using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.Core.Filters;
-using Nls.SmartBlogger.EfPersister;
 using Nls.SmartBlogger.EfPersister.Abstracts;
 using Nls.SmartBlogger.EfPersister.Entities;
-using Nls.SmartBlogger.EfPersister.Repositories;
 using SmartBlogger.Tests.Common;
 using SmartBlogger.UnitTests.Modules;
 using NUnit.Framework;
 using Shouldly;
+using SmartBlogger.Tests.Common.Builders;
 
 namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 {
@@ -24,6 +20,8 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
     public class BlogServiceTests : TestBase<InfrastructureUnitTestsModule>
     {
         private IBlogService _blogService;
+
+        private readonly BlogBuilder _blogBuilder = new BlogBuilder();
 
         [OneTimeSetUp]
         public void InitializePerClassInstance()
@@ -64,7 +62,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             // Arrange
             var mockBlogRepository = new Mock<IBlogRepository>();
 
-            IList<Blog> blogList = FakeBlogs();
+            IList<Blog> blogList = _blogBuilder.BuildBlogs;
 
             mockBlogRepository
                 .Setup(r => r.GetAllAsync())
@@ -87,7 +85,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             // Arrange
             var mockBlogRepository = new Mock<IBlogRepository>();
 
-            IList<Blog> blogList = FakeBlogs();
+            IList<Blog> blogList = _blogBuilder.BuildBlogs;
 
             mockBlogRepository
                 .Setup(r => r.GetAllAsync())

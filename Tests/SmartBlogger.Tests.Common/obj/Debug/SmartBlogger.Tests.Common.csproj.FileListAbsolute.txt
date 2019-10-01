@@ -7,3 +7,10 @@ C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.csproj.CopyComplete
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.dll
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.pdb
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.EfPersister.dll
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\EntityFramework.dll
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.Common.dll
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.EfPersister.pdb
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.EfPersister.dll.config
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\EntityFramework.xml
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.Common.pdb
