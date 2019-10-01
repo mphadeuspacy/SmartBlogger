@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Nls.SmartBlogger.Mvc.Models;
+using Nls.SmartBlogger.Mvc.ViewModels;
 
 namespace Nls.SmartBlogger.Mvc.Controllers
 {
