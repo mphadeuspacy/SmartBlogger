@@ -25,6 +25,10 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
         private Mock<IBlogRepository> _mockBlogRepository;
 
+        private readonly BlogRepositoryBuilder _blogRepositoryBuilder = new BlogRepositoryBuilder();
+
+        private GetAllAsyncFilter _getAllAsyncFilter;
+
         [OneTimeSetUp]
         public void InitializePerClassInstance()
         {
@@ -50,10 +54,10 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
         public void GetAllByFilterAsync_WhenGetAllAsyncFilterIsNull_ThenThrowBusinessException()
         {
             // Arrange
-            GetAllAsyncFilter getAllAsyncFilter = null;
+            _getAllAsyncFilter = null;
            
             // Act & Assert
-            Assert.ThrowsAsync<BusinessException>( async() => await _blogService.GetAllByFilterAsync(getAllAsyncFilter));
+            Assert.ThrowsAsync<BusinessException>( async() => await _blogService.GetAllByFilterAsync(_getAllAsyncFilter));
         }
         #endregion
 
@@ -64,7 +68,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             // Arrange
             IList<Blog> blogList = _blogBuilder.BuildBlogs;
 
-            _mockBlogRepository = new Mock<IBlogRepository>();
+            _mockBlogRepository = _blogRepositoryBuilder.BuildBlogRepositoryMock;
 
             _mockBlogRepository
                 .Setup(r => r.GetAllAsync())
@@ -72,10 +76,10 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
             int expectedResult = 0;
 
-            var getAllAsyncFilter = new GetAllAsyncFilter(skip: 0, take:0);
+            _getAllAsyncFilter = new GetAllAsyncFilter(skip:0, take:0);
 
             // Act 
-            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
+            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);
 
             // Assert
             actualResult.Count.ShouldBe(expectedResult);
@@ -87,7 +91,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             // Arrange
             IList<Blog> blogList = _blogBuilder.BuildBlogs;
 
-            _mockBlogRepository = new Mock<IBlogRepository>();
+            _mockBlogRepository = _blogRepositoryBuilder.BuildBlogRepositoryMock;
 
             _mockBlogRepository
                 .Setup(r => r.GetAllAsync())
@@ -95,10 +99,10 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
             int expectedResult = 3;
 
-            var getAllAsyncFilter = new GetAllAsyncFilter(skip: 0, take: 3);
+            _getAllAsyncFilter = new GetAllAsyncFilter(skip: 0, take: 3);
 
             // Act 
-            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
+            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);
 
             // Assert
             actualResult.Count.ShouldBe(expectedResult);
@@ -122,10 +126,10 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
             int expectedResult = 3;
 
-            var getAllAsyncFilter = new GetAllAsyncFilter(skip: 3, take: 3);
+            _getAllAsyncFilter = new GetAllAsyncFilter(skip: 3, take: 3);
 
             // Act 
-            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(getAllAsyncFilter);
+            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);
 
             // Assert
             actualResult.Count.ShouldBe(expectedResult);

@@ -14,3 +14,7 @@ C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.E
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.EfPersister.dll.config
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\EntityFramework.xml
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Nls.SmartBlogger.Common.pdb
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Castle.Core.dll
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Moq.dll
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Castle.Core.xml
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Moq.xml

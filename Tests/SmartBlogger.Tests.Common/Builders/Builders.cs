@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Moq;
+using Nls.SmartBlogger.EfPersister.Abstracts;
 using Nls.SmartBlogger.EfPersister.Entities;
 
 namespace SmartBlogger.Tests.Common.Builders
@@ -18,5 +20,11 @@ namespace SmartBlogger.Tests.Common.Builders
             new Blog { BlogId = 9 },
             new Blog { BlogId = 10 }
         };
+        
+    }
+
+    public class BlogRepositoryBuilder
+    {
+        public Mock<IBlogRepository> BuildBlogRepositoryMock => new Mock<IBlogRepository>();
     }
 }
