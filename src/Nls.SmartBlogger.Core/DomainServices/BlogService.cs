@@ -34,7 +34,7 @@ namespace Nls.SmartBlogger.Core.DomainServices
 
             IList<Blog> blogList = await _blogRepository.GetAllAsync();
 
-            return blogList.Take(getAllAsyncFilter.Take).ToList();
+            return blogList.Skip(getAllAsyncFilter.Skip).Take(getAllAsyncFilter.Take).ToList();
         }
     }
 }

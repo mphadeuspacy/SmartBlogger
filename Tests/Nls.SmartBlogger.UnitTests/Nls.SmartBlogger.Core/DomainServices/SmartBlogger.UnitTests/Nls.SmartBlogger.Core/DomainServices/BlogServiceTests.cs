@@ -110,6 +110,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             actualResult.Single(third => third.BlogId == 3).ShouldNotBeNull();
         }
 
+        [Test]
         public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterTakeAndSkipAre3AndBlogsExistInTheDataStore_ThenReturnNext4To6Blogs()
         {
             // Arrange
