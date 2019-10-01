@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Nls.SmartBlogger.Common.Exceptions;
 using Nls.SmartBlogger.Core.Filters;
@@ -22,14 +24,17 @@ namespace Nls.SmartBlogger.Core.DomainServices
             _blogRepository = blogRepository ?? throw new ArgumentNullException();
         }
 
-        public Task<IList<Blog>> GetAllByFilterAsync(GetAllAsyncFilter getAllAsyncFilter)
+        public async Task<IList<Blog>> GetAllByFilterAsync(GetAllAsyncFilter getAllAsyncFilter)
         {
             if (getAllAsyncFilter == null)
             {
                 // TODO: Add logger for exception message
                 throw new BusinessException($"Business exception occurred with message : {nameof(getAllAsyncFilter)} is cannot be null");
             }
-            throw new System.NotImplementedException();
+
+            IList<Blog> blogList = await _blogRepository.GetAllAsync();
+
+            return blogList.Take(getAllAsyncFilter.Take).ToList();
         }
     }
 }

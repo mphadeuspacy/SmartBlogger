@@ -8,16 +8,12 @@ namespace Nls.SmartBlogger.EfPersister
 {
     public class SmartBloggerDbContext : DbContext, IUnitOfWork
     {
+        public SmartBloggerDbContext() { }
+
         public SmartBloggerDbContext(string connection) 
             : base("SmartBloggerDbContext")
         {
         }
-
-        ////This constructor is used in tests
-        //public SmartBloggerDbContext(DbConnection connection)
-        //    : base(connection, true)
-        //{
-        //}
 
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Tag> Tags { get; set; }

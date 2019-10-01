@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201909291531269_Updated_Seeded_Tags.Designer.cs">
       <DependentUpon>201909291531269_Updated_Seeded_Tags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910010955126_Updated_DbContext.cs" />
+    <Compile Include="Migrations\201910010955126_Updated_DbContext.Designer.cs">
+      <DependentUpon>201910010955126_Updated_DbContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Tag.cs" />
@@ -83,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909291531269_Updated_Seeded_Tags.resx">
       <DependentUpon>201909291531269_Updated_Seeded_Tags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910010955126_Updated_DbContext.resx">
+      <DependentUpon>201910010955126_Updated_DbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
