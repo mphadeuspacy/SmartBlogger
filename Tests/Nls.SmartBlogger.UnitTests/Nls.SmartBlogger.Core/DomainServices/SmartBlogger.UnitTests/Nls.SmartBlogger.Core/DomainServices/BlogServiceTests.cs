@@ -141,6 +141,29 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
             actualResult.Single(six => six.BlogId == 6).ShouldNotBeNull();
         }
 
+        [Test]
+        public async Task GetAllByFilterAsync_WhenGetAllAsyncFilterSkipIs9AndTake3AndBlogsExistInTheDataStore_ThenReturn10thBlog()
+        {
+            // Arrange
+            IList<Blog> blogList = _blogBuilder.BuildBlogs;
+
+            _mockBlogRepository
+                .Setup(r => r.GetAllAsync())
+                .ReturnsAsync(blogList);
+
+            int expectedResult = 1;
+
+            _getAllAsyncFilter = new GetAllAsyncFilter(skip: 9, take: 1);
+
+            // Act 
+            var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);
+
+            // Assert
+            actualResult.Count.ShouldBe(expectedResult);
+
+            actualResult.Single(ten => ten.BlogId == 10).ShouldNotBeNull();
+        }
+
         #endregion
 
         [OneTimeTearDown]

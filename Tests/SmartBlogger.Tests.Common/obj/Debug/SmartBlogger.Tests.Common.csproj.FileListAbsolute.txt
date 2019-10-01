@@ -18,3 +18,5 @@ C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Castle.Core.dll
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Moq.dll
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Castle.Core.xml
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Moq.xml
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\nunit.framework.dll
+C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\nunit.framework.xml
