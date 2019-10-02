@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="DomainServices\BlogService.cs" />
     <Compile Include="DomainServices\BlobStorageService.cs" />
-    <Compile Include="Filters\GetAllBlobsFilter.cs" />
+    <Compile Include="Filters\GetAllByFilterInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

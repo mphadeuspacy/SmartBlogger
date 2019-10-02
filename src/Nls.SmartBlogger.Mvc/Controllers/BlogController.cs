@@ -5,6 +5,7 @@ using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.Core.Filters;
 using Nls.SmartBlogger.EfPersister.Entities;
 using Nls.SmartBlogger.Mvc.ViewModels;
+using Nls.SmartBlogger.Mvc.ViewModels.Blog;
 
 namespace Nls.SmartBlogger.Mvc.Controllers
 {
@@ -22,9 +23,9 @@ namespace Nls.SmartBlogger.Mvc.Controllers
             _cloudBlobStorageService = cloudBlobStorageService;
         }
 
-        public async Task<ActionResult> Index(GetAllBlobsFilter getAllBlobsFilter)
+        public async Task<ActionResult> Index(GetAllByFilterInput input)
         {
-            IList<Blog> blogs = await _blogService.GetAllByFilterAsync(getAllBlobsFilter);
+            IList<Blog> blogs = await _blogService.GetAllByFilterAsync(input);
 
             var blogListViewModel = new BlogListViewModel
             (

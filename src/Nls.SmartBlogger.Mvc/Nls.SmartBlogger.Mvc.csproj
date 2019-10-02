@@ -182,7 +182,8 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Modules\ApplicationModule.cs" />
-    <Compile Include="ViewModels\BlogListViewModel.cs" />
+    <Compile Include="ViewModels\Blog\BlogListViewModel.cs" />
+    <Compile Include="ViewModels\Blog\CreateBlobViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />

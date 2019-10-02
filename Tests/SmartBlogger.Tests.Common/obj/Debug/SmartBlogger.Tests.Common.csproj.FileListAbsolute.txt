@@ -3,7 +3,6 @@ C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\SmartBlogger.Tests
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Autofac.dll
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\bin\Debug\Autofac.xml
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.csprojAssemblyReference.cache
-C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.csproj.CoreCompileInputs.cache
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.csproj.CopyComplete
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.dll
 C:\Dev\SmartBlogger\Tests\SmartBlogger.Tests.Common\obj\Debug\SmartBlogger.Tests.Common.pdb
