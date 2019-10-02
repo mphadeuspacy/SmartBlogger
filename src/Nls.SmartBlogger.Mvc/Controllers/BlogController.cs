@@ -1,16 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Nls.SmartBlogger.Core.DomainServices;
+using Nls.SmartBlogger.Core.Filters;
+using Nls.SmartBlogger.EfPersister.Entities;
+using Nls.SmartBlogger.Mvc.ViewModels;
 
 namespace Nls.SmartBlogger.Mvc.Controllers
 {
+    //[Authorize]
     public class BlogController : Controller
     {
-        public ActionResult Index()
+        private readonly IBlogService _blogService;
+
+        public BlogController(IBlogService blogService)
         {
-            return View();
+            _blogService = blogService;
+        }
+
+        public async Task<ActionResult> Index(GetAllBlobsFilter getAllBlobsFilter)
+        {
+            IList<Blog> blogs = await _blogService.GetAllByFilterAsync(getAllBlobsFilter);
+
+            var blogListViewModel = new BlogListViewModel
+            (
+                blogs
+            );
+
+            return View(blogListViewModel);
         }
 
         public ActionResult About()

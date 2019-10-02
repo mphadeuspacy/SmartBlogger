@@ -27,7 +27,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
         private readonly BlogRepositoryBuilder _blogRepositoryBuilder = new BlogRepositoryBuilder();
 
-        private GetAllAsyncFilter _getAllAsyncFilter;
+        private GetAllBlobsFilter _getAllAsyncFilter;
 
         [OneTimeSetUp]
         public void InitializePerClassInstance()
@@ -76,7 +76,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
             int expectedResult = 0;
 
-            _getAllAsyncFilter = new GetAllAsyncFilter(skip:0, take:0);
+            _getAllAsyncFilter = new GetAllBlobsFilter(skip:0, take:0);
 
             // Act 
             var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);
@@ -99,7 +99,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
             int expectedResult = 3;
 
-            _getAllAsyncFilter = new GetAllAsyncFilter(skip: 0, take: 3);
+            _getAllAsyncFilter = new GetAllBlobsFilter(skip: 0, take: 3);
 
             // Act 
             var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);
@@ -126,7 +126,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
             int expectedResult = 3;
 
-            _getAllAsyncFilter = new GetAllAsyncFilter(skip: 3, take: 3);
+            _getAllAsyncFilter = new GetAllBlobsFilter(skip: 3, take: 3);
 
             // Act 
             var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);
@@ -153,7 +153,7 @@ namespace SmartBlogger.UnitTests.Nls.SmartBlogger.Core.DomainServices
 
             int expectedResult = 1;
 
-            _getAllAsyncFilter = new GetAllAsyncFilter(skip: 9, take: 1);
+            _getAllAsyncFilter = new GetAllBlobsFilter(skip: 9, take: 1);
 
             // Act 
             var actualResult = await new BlogService(_mockBlogRepository.Object).GetAllByFilterAsync(_getAllAsyncFilter);

@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainServices\BlogService.cs" />
-    <Compile Include="Filters\GetAllAsyncFilter.cs" />
+    <Compile Include="Filters\GetAllBlobsFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,7 +12,7 @@ namespace Nls.SmartBlogger.Core.DomainServices
 {
     public interface IBlogService
     {
-        Task<IList<Blog>> GetAllByFilterAsync(GetAllAsyncFilter getAllAsyncFilter);
+        Task<IList<Blog>> GetAllByFilterAsync(GetAllBlobsFilter getAllBlobsFilter);
 
         Task<Blog> GetByIdAsync(int id);
 
@@ -32,17 +32,17 @@ namespace Nls.SmartBlogger.Core.DomainServices
             _blogRepository = blogRepository ?? throw new ArgumentNullException();
         }
 
-        public async Task<IList<Blog>> GetAllByFilterAsync(GetAllAsyncFilter getAllAsyncFilter)
+        public async Task<IList<Blog>> GetAllByFilterAsync(GetAllBlobsFilter getAllBlobsFilter)
         {
-            if (getAllAsyncFilter == null)
+            if (getAllBlobsFilter == null)
             {
                 // TODO: Add logger for exception message
-                throw new BusinessException($"Business exception occurred with message : {nameof(getAllAsyncFilter)} is cannot be null");
+                throw new BusinessException($"Business exception occurred with message : {nameof(getAllBlobsFilter)} is cannot be null");
             }
 
             IList<Blog> blogList = await _blogRepository.GetAllAsync();
 
-            return blogList.Skip(getAllAsyncFilter.Skip).Take(getAllAsyncFilter.Take).ToList();
+            return blogList.Skip(getAllBlobsFilter.Skip).Take(getAllBlobsFilter.Take).ToList();
         }
 
         public async Task<Blog> GetByIdAsync(int id)

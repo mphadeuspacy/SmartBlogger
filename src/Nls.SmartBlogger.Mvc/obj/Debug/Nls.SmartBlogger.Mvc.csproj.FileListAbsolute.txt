@@ -208,3 +208,14 @@ C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\obj\Debug\Nls.SmartBlogger.Mvc.cspr
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\obj\Debug\Nls.SmartBlogger.Mvc.csproj.CopyComplete
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\obj\Debug\Nls.SmartBlogger.Mvc.dll
 C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\obj\Debug\Nls.SmartBlogger.Mvc.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Nls.SmartBlogger.Core.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Nls.SmartBlogger.EfPersister.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Nls.SmartBlogger.Common.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Nls.SmartBlogger.Core.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Nls.SmartBlogger.EfPersister.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Nls.SmartBlogger.EfPersister.dll.config
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Nls.SmartBlogger.Common.pdb
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Autofac.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Autofac.xml
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Autofac.Integration.Mvc.dll
+C:\Dev\SmartBlogger\src\Nls.SmartBlogger.Mvc\bin\Autofac.Integration.Mvc.xml
