@@ -25,8 +25,6 @@ namespace Nls.SmartBlogger.Mvc.Modules
         {
             var smartDbContext = new SmartBloggerDbContext(_connectionString);
 
-            var blogRepository = new BlogRepository(smartDbContext);
-
             builder.RegisterType<BlogRepository>()
                 .As<IBlogRepository>()
                 .WithParameter("context", smartDbContext)
@@ -34,6 +32,10 @@ namespace Nls.SmartBlogger.Mvc.Modules
 
             builder.RegisterType<BlogService>()
                 .As<IBlogService>()
+                .SingleInstance();
+
+            builder.RegisterType<CloudBlobStorageService>()
+                .As<ICloudBlobStorageService>()
                 .SingleInstance();
         }
     }

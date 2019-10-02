@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.Core.Filters;
@@ -16,9 +13,13 @@ namespace Nls.SmartBlogger.Mvc.Controllers
     {
         private readonly IBlogService _blogService;
 
-        public BlogController(IBlogService blogService)
+        private readonly ICloudBlobStorageService _cloudBlobStorageService;
+
+        public BlogController(IBlogService blogService, ICloudBlobStorageService cloudBlobStorageService)
         {
             _blogService = blogService;
+
+            _cloudBlobStorageService = cloudBlobStorageService;
         }
 
         public async Task<ActionResult> Index(GetAllBlobsFilter getAllBlobsFilter)
@@ -35,6 +36,13 @@ namespace Nls.SmartBlogger.Mvc.Controllers
 
         public ActionResult Create()
         {
+            var allCloudBlobUriList = _cloudBlobStorageService.GetBlobUriListForAccountContainer
+            (
+                "nlsaccount",
+                "smart-blogger-images",
+                "R6BkV3TZmcPx/l2loaulp9imd0wlFuQXZRhs2H9/5v+VN4UaswIl6vhZ+6AZOtcdFlZBmghnOQg/aXASW3xIFw=="
+            );
+
             return View();
         }
 
