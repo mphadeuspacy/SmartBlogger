@@ -33,10 +33,8 @@ namespace Nls.SmartBlogger.Mvc.Controllers
             return View(blogListViewModel);
         }
 
-        public ActionResult About()
+        public ActionResult Create()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
