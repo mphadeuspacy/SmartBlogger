@@ -7,5 +7,7 @@
         public static string AzureStorageKey => "AzureStorageKey";
 
         public static string AzureStorageAccount => "AzureStorageAccount";
+
+        public static string AzureStorageContainer => "AzureStorageContainer";
     }
 }

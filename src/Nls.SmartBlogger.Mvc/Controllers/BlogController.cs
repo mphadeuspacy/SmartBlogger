@@ -1,23 +1,30 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Nls.SmartBlogger.Common;
 using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.Core.Filters;
 using Nls.SmartBlogger.EfPersister.Entities;
-using Nls.SmartBlogger.Mvc.ViewModels;
 using Nls.SmartBlogger.Mvc.ViewModels.Blog;
+using static System.Web.Configuration.WebConfigurationManager;
 
 namespace Nls.SmartBlogger.Mvc.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class BlogController : Controller
     {
         private readonly IBlogService _blogService;
 
         private readonly ICloudBlobStorageService _cloudBlobStorageService;
 
-        public BlogController(IBlogService blogService, ICloudBlobStorageService cloudBlobStorageService)
+        public BlogController
+        (
+            IBlogService blogService, 
+            ICloudBlobStorageService cloudBlobStorageService
+        )
         {
             _blogService = blogService;
 
@@ -38,21 +45,52 @@ namespace Nls.SmartBlogger.Mvc.Controllers
 
         public ActionResult Create()
         {
-            var allCloudBlobUriList = _cloudBlobStorageService.GetBlobUriListForAccountContainer
+            return View(CreateBlobViewModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(CreateBlobViewModel blogViewModel)
+        {
+            try
+            {
+                // TODO : ModelState validation not working as expected, although values required are not empty
+                var blogToCreate = new Blog
+                {
+                    Title = blogViewModel.Blog.Title,
+                    AuthorId = 1,
+                    ImageUrl = blogViewModel.SelectedImageUri,
+                    Blurb = blogViewModel.Blog.Blurb,
+                    TagId = int.TryParse(blogViewModel.SelectedTag, out int tagIdResult) ? tagIdResult : (int?) null,
+                    CreationTime = DateTime.Today,
+                    CreatorUserId = 1
+                };
+                
+                await _blogService.CreateAsync(blogToCreate);
+
+                return RedirectToAction("Index");
+
+            }
+            catch (DataException)
+            { 
+                ModelState.AddModelError(string.Empty, "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+            }
+
+            return View(CreateBlobViewModel());
+        }
+
+        #region Helpers
+        private CreateBlobViewModel CreateBlobViewModel()
+        {
+            IList<string> blobImageUriList = _cloudBlobStorageService.GetBlobUriListForAccountContainer
             (
-                "nlsaccount",
-                "smart-blogger-images",
-                "R6BkV3TZmcPx/l2loaulp9imd0wlFuQXZRhs2H9/5v+VN4UaswIl6vhZ+6AZOtcdFlZBmghnOQg/aXASW3xIFw=="
+                AppSettings[SmartBloggerConsts.AzureStorageAccount],
+                AppSettings[SmartBloggerConsts.AzureStorageContainer],
+                AppSettings[SmartBloggerConsts.AzureStorageKey]
             );
 
-            return View(new CreateBlobViewModel());
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+            return new CreateBlobViewModel(blobImageUriList);
+        } 
+        #endregion
     }
 }

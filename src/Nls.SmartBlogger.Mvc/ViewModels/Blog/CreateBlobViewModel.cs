@@ -10,7 +10,40 @@ namespace Nls.SmartBlogger.Mvc.ViewModels.Blog
     {
         public CreateBlobViewModel(){}
 
+        public CreateBlobViewModel(IList<string> blobImageUriList)
+        {
+            BlobImageUriList = blobImageUriList;
+        }
+
         public EfPersister.Entities.Blog Blog { get; set; }
+
+        public IList<string> BlobImageUriList { get; }
+
+        public string SelectedImageUri { get; set; }
+
+        public List<SelectListItem> GetBlobImageUriSelectListItems()
+        {
+            var selectListItemsInitial = new List<SelectListItem>
+            {
+                new SelectListItem
+                {
+                    Text = "Select Image Uri",
+                    Value = string.Empty,
+                    Selected = SelectedImageUri == null
+                }
+            };
+
+            var selectListItems = BlobImageUriList
+                .Select(imageUri => new SelectListItem
+                {
+                    Value = imageUri,
+                    Text = imageUri,
+                    Selected = imageUri.ToString() == SelectedImageUri
+                }
+            ).ToList();
+
+            return selectListItemsInitial.Union(selectListItems).ToList();
+        }
 
         public string SelectedTag { get; set; }
 
@@ -31,7 +64,7 @@ namespace Nls.SmartBlogger.Mvc.ViewModels.Blog
                 .Select(tag =>
                     new SelectListItem
                     {
-                        Text = $"{tag}",
+                        Text = tag.ToString(),
                         Value = tag.ToString(),
                         Selected = tag.ToString() == SelectedTag
                     })

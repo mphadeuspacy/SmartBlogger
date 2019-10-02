@@ -16,11 +16,11 @@ namespace Nls.SmartBlogger.Core.DomainServices
 
         Task<Blog> GetByIdAsync(int id);
 
-        Blog Add(Blog blog);
+        Task<bool> CreateAsync(Blog blog);
 
-        void Update(Blog blog);
+        Task<bool> UpdateAsync(Blog blog);
 
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 
     public class BlogService : IBlogService
@@ -56,7 +56,7 @@ namespace Nls.SmartBlogger.Core.DomainServices
             return await _blogRepository.GetByIdAsync(id);
         }
 
-        public Blog Add(Blog blog)
+        public async Task<bool> CreateAsync(Blog blog)
         {
             if (blog == null)
             {
@@ -64,10 +64,14 @@ namespace Nls.SmartBlogger.Core.DomainServices
                 throw new BusinessException($"Business exception occurred with message : {nameof(blog)} cannot be null");
             }
 
-            return _blogRepository.Add(blog);
+            _blogRepository.Add(blog);
+
+            await _blogRepository.UnitOfWork.CommitAsync();
+
+            return true;
         }
 
-        public void Update(Blog blog)
+        public async Task<bool> UpdateAsync(Blog blog)
         {
             if (blog == null)
             {
@@ -76,9 +80,13 @@ namespace Nls.SmartBlogger.Core.DomainServices
             }
 
             _blogRepository.Update(blog);
+
+            await _blogRepository.UnitOfWork.CommitAsync();
+
+            return true;
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
             if (id <= 0)
             {
@@ -87,6 +95,8 @@ namespace Nls.SmartBlogger.Core.DomainServices
             }
 
             _blogRepository.Delete(id);
+
+            await _blogRepository.UnitOfWork.CommitAsync();
         }
     }
 }
