@@ -8,6 +8,8 @@ namespace Nls.SmartBlogger.Mvc.ViewModels.Blog
 {
     public class CreateBlobViewModel
     {
+        public CreateBlobViewModel(){}
+
         public EfPersister.Entities.Blog Blog { get; set; }
 
         public string SelectedTag { get; set; }
@@ -29,7 +31,7 @@ namespace Nls.SmartBlogger.Mvc.ViewModels.Blog
                 .Select(tag =>
                     new SelectListItem
                     {
-                        Text = $"Tag_{tag}",
+                        Text = $"{tag}",
                         Value = tag.ToString(),
                         Selected = tag.ToString() == SelectedTag
                     })

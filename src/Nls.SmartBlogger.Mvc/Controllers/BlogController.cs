@@ -45,7 +45,7 @@ namespace Nls.SmartBlogger.Mvc.Controllers
                 "R6BkV3TZmcPx/l2loaulp9imd0wlFuQXZRhs2H9/5v+VN4UaswIl6vhZ+6AZOtcdFlZBmghnOQg/aXASW3xIFw=="
             );
 
-            return View();
+            return View(new CreateBlobViewModel());
         }
 
         public ActionResult Contact()

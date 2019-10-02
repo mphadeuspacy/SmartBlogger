@@ -39,8 +39,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Blog.TagId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Blog.TagId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Blog.TagId, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(
+                    model => model.SelectedTag,
+                    Model.GetBlogsTagSelectListItems(),
+                    new
+                    {
+                        @class = "form-control",
+                        id = "RegistrationStatusId"
+                    } )
             </div>
         </div>
 
