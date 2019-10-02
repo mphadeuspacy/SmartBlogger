@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\ComboboxItemDto.cs" />
+    <Compile Include="Enums\AppEnums.cs" />
     <Compile Include="Enums\Enumeration.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />

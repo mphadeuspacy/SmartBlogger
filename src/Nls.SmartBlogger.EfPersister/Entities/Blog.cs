@@ -19,6 +19,7 @@ namespace Nls.SmartBlogger.EfPersister.Entities
         public string ImageUrl { get; set; }
         [Required]
         public string Blurb { get; set; }
+        [Display(Name = "Tag")]
         public int? TagId { get; set; }
 
         public DateTime? CreationTime { get; set; }
