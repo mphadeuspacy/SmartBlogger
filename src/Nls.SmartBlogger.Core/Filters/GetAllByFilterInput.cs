@@ -2,8 +2,8 @@
 {
     public class GetAllByFilterInput
     {
-        public ushort Skip { get; }
-        public ushort Take { get; }
+        public ushort Skip { get; set;  }
+        public ushort Take { get; set;  }
 
         public GetAllByFilterInput
         (

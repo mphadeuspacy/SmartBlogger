@@ -9,5 +9,7 @@
         public static string AzureStorageAccount => "AzureStorageAccount";
 
         public static string AzureStorageContainer => "AzureStorageContainer";
+
+        public static string NumberBlogsToLoad => "NumberBlogsToLoad";
     }
 }

@@ -34,6 +34,14 @@ namespace Nls.SmartBlogger.Mvc.Controllers
 
         public async Task<ActionResult> Index(GetAllByFilterInput input)
         {
+            if(input == null)
+            {
+                input = new GetAllByFilterInput();
+            }
+
+            // This will always be a constant
+            input.Take = ushort.Parse(AppSettings[SmartBloggerConsts.NumberBlogsToLoad]);
+
             IList<Blog> blogs = await _blogService.GetAllByFilterAsync(input);
 
             var blogListViewModel = new BlogListViewModel
