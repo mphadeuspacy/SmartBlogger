@@ -13,7 +13,7 @@ namespace Nls.SmartBlogger.EfPersister.Entities
         [Required]
         [MaxLength(MaxNameLength)]
         public string Title { get; set; }
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
         [Required]
         [Display(Name = "Blob Image Uri")]
         public string ImageUrl { get; set; }
@@ -23,9 +23,9 @@ namespace Nls.SmartBlogger.EfPersister.Entities
         public int? TagId { get; set; }
 
         public DateTime? CreationTime { get; set; }
-        public int? CreatorUserId { get; set; }
+        public string CreatorUserId { get; set; }
         public DateTime? LastModificationTime { get; set; }
-        public int? LastModifierUserId { get; set; }
+        public string LastModifierUserId { get; set; }
 
         public virtual Tag Tag { get; set; }
     }

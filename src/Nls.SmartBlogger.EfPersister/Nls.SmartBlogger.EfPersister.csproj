@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201910010955126_Updated_DbContext.Designer.cs">
       <DependentUpon>201910010955126_Updated_DbContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910030014482_Updated_User_Identification_To_Be_Based_On_Username.cs" />
+    <Compile Include="Migrations\201910030014482_Updated_User_Identification_To_Be_Based_On_Username.Designer.cs">
+      <DependentUpon>201910030014482_Updated_User_Identification_To_Be_Based_On_Username.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Tag.cs" />
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910010955126_Updated_DbContext.resx">
       <DependentUpon>201910010955126_Updated_DbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910030014482_Updated_User_Identification_To_Be_Based_On_Username.resx">
+      <DependentUpon>201910030014482_Updated_User_Identification_To_Be_Based_On_Username.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

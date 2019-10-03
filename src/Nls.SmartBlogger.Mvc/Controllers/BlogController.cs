@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Nls.SmartBlogger.Common;
 using Nls.SmartBlogger.Core.DomainServices;
 using Nls.SmartBlogger.Core.Filters;
@@ -54,16 +55,17 @@ namespace Nls.SmartBlogger.Mvc.Controllers
         {
             try
             {
+                Debug.WriteLine(User.Identity.GetUserName());
                 // TODO : ModelState validation not working as expected, although values required are not empty
                 var blogToCreate = new Blog
                 {
                     Title = blogViewModel.Blog.Title,
-                    AuthorId = 1,
+                    AuthorId = User.Identity.GetUserName(),
                     ImageUrl = blogViewModel.SelectedImageUri,
                     Blurb = blogViewModel.Blog.Blurb,
                     TagId = int.TryParse(blogViewModel.SelectedTag, out int tagIdResult) ? tagIdResult : (int?) null,
-                    CreationTime = DateTime.Today,
-                    CreatorUserId = 1
+                    CreationTime = DateTime.UtcNow,
+                    CreatorUserId = User.Identity.GetUserName()
                 };
                 
                 await _blogService.CreateAsync(blogToCreate);
