@@ -37,13 +37,14 @@ namespace Nls.SmartBlogger.Mvc.Controllers
             IList<Blog> blogs = await _blogService.GetAllByFilterAsync(input);
 
             var blogListViewModel = new BlogListViewModel
-            (
-                blogs
-            );
+            {
+                Blogs = blogs
+            };
 
             return View(blogListViewModel);
         }
 
+        [HttpGet]
         public ActionResult Create()
         {
             return View(CreateBlobViewModel());
@@ -54,16 +55,15 @@ namespace Nls.SmartBlogger.Mvc.Controllers
         public async Task<ActionResult> Create(CreateBlobViewModel blogViewModel)
         {
             try
-            {
-                Debug.WriteLine(User.Identity.GetUserName());
-                // TODO : ModelState validation not working as expected, although values required are not empty
+            {                
+                // TODO: ModelState validation not working as expected, although values required are not empty
                 var blogToCreate = new Blog
                 {
                     Title = blogViewModel.Blog.Title,
                     AuthorId = User.Identity.GetUserName(),
                     ImageUrl = blogViewModel.SelectedImageUri,
                     Blurb = blogViewModel.Blog.Blurb,
-                    TagId = int.TryParse(blogViewModel.SelectedTag, out int tagIdResult) ? tagIdResult : (int?) null,
+                    TagId = int.TryParse(blogViewModel.SelectedTag, out int tagIdResult) ? tagIdResult : (int?) null, // TODO: Retrieve enum value based on selection
                     CreationTime = DateTime.UtcNow,
                     CreatorUserId = User.Identity.GetUserName()
                 };
