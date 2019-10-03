@@ -89,6 +89,14 @@ namespace Nls.SmartBlogger.Mvc.Controllers
             return View(CreateBlobViewModel());
         }
 
+        [HttpGet]
+        public async Task<ActionResult> Details(int blogId)
+        {
+            Blog blogDetails = await _blogService.GetByIdAsync(blogId);
+
+            return View(blogDetails);
+        }
+
         #region Helpers
         private CreateBlobViewModel CreateBlobViewModel()
         {
