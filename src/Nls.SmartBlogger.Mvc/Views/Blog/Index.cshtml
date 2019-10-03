@@ -50,28 +50,31 @@
                     <div class="card">
                         <div class="header">
                             <div class="body">
-                                @if (Model.Blogs != null && Model.Blogs.Any() == true)
-                                {
-                                    foreach (var item in Model.Blogs)
+                                @using (Html.BeginForm("Index", "Blog", FormMethod.Get))
+                                { 
+                                    if (Model.Blogs != null && Model.Blogs.Any() == true)
                                     {
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="blog/Details/">
-                                                    <img class="media-object" src="http://placehold.it/64x6" width="64" height="64">
-                                                </a>
+                                        foreach (var item in Model.Blogs)
+                                        {
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <a href="blog/Details/">
+                                                        <img class="media-object" src="http://placehold.it/64x6" width="64" height="64">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                                    ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                                    turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
+                                                    in faucibus.
+                                                </div>
                                             </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                                ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                                                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                                                in faucibus.
-                                            </div>
-                                        </div>
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    <p>No records found that meet the filtering criteria</p>
+                                    else
+                                    {
+                                        <p>No records found that meet the filtering criteria</p>
+                                    }
                                 }
                             </div>
                         </div>
