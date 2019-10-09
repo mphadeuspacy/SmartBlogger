@@ -7,7 +7,7 @@
 <h2>Blogs</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create",  null, new  { @class = "btn btn-default" })
 </p>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@
                         <div class="header">
                             <div class="body">
                                 @using (Html.BeginForm("Index", "Blog", FormMethod.Get))
-                                { 
+                                {
                                     if (Model.Blogs != null && Model.Blogs.Any() == true)
                                     {
                                         foreach (var blog in Model.Blogs)
@@ -63,12 +63,12 @@
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
-                                                    <h4 class="media-heading">@blog.Title</h4> 
+                                                    <h4 class="media-heading">@blog.Title</h4>
                                                     <p>@blog.Blurb</p>
                                                 </div>
                                             </div>
                                         }
-                                        <a class="btn btn-success center-block" >Load More >>></a>
+                                        <a class="btn btn-success center-block"> Load More >>></a>
                                     }
                                     else
                                     {
@@ -109,6 +109,26 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
+
+    <script type="text/javascript">
+        var data = {
+            model: {
+                Take: 3,
+                Skip: 3
+            }
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/Blog/Index/",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                // Do something interesting here.
+            }
+        });
+    </script>
 </body>
 
 </html>
